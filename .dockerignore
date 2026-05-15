@@ -1,0 +1,4 @@
+stress-test.js
+node_modules
+.git
+*.log

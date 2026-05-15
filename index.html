@@ -1,1016 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MashAllah Autos – Trusted Car Mechanic in Lahore</title>
-<meta name="description" content="MashAllah Autos – Expert car repair, doorstep mechanic service, and on-the-spot roadside car repair in Lahore. Call Tanveer Khan: 0310-2090633">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --red: #C0392B;
-    --red-dark: #922B21;
-    --red-light: #F5B7B1;
-    --red-bg: #FDEDEC;
-    --black: #1A1A1A;
-    --dark: #2C2C2C;
-    --gray: #6B6B6B;
-    --light-gray: #F4F4F4;
-    --white: #FFFFFF;
-    --border: #E0E0E0;
-    --font-head: 'Barlow Condensed', sans-serif;
-    --font-body: 'Barlow', sans-serif;
-    --shadow: 0 2px 16px rgba(0,0,0,0.08);
-    --radius: 10px;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    background: var(--black);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; height: 64px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  }
-  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-icon {
-    width: 38px; height: 38px; background: var(--red);
-    border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  }
-  .nav-logo-icon svg { width: 22px; height: 22px; fill: white; }
-  .nav-brand-text { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: white; letter-spacing: 0.5px; }
-  .nav-brand-text span { color: var(--red); }
-  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-  .nav-links a { color: #CCC; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: white; }
-  .nav-cta {
-    background: var(--red); color: white; border: none; padding: 8px 20px;
-    border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;
-    text-decoration: none; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--red-dark); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; display: block; }
+  <!-- SEO: Title Tag -->
+  <title>Car Mechanic in Sadar Bazar Lahore | MashAllah Autos</title>
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; background: var(--black);
-    display: flex; align-items: center;
-    padding: 100px 5% 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; gap: 40px; width: 100%; position: relative; z-index: 1;
-  }
-  .hero-content { position: relative; z-index: 1; max-width: 580px; }
+  <!-- SEO: Meta Description -->
+  <meta name="description" content="MashAllah Autos – trusted car mechanic in Sadar Bazar, Lahore. Engine repair, AC, brakes, doorstep mechanic & roadside repair. Call Tanveer Khan: 0310-2090633." />
 
-  /* HERO VISUAL */
-  .hero-visual {
-    display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 1;
-  }
-  .hero-svg-wrap {
-    position: relative; width: 100%; max-width: 520px;
-  }
-  /* floating glow ring behind car */
-  .hero-svg-wrap::before {
-    content: '';
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(192,57,43,0.18) 0%, transparent 70%);
-    animation: glowPulse 3s ease-in-out infinite;
-  }
-  @keyframes glowPulse { 0%,100%{opacity:0.6;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)} }
+  <!-- SEO: Keywords -->
+  <meta name="keywords" content="car mechanic Lahore, mechanic Sadar Bazar Lahore, doorstep mechanic Lahore, engine repair Lahore, AC repair car Lahore, roadside mechanic Lahore, MashAllah Autos, Tanveer Khan mechanic" />
 
-  /* SVG animations */
-  @keyframes floatCar { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  @keyframes spinWheel { from{transform-origin:center;transform:rotate(0deg)} to{transform-origin:center;transform:rotate(360deg)} }
-  @keyframes wrenchSwing {
-    0%,100%{transform:rotate(-18deg) translate(0,0)}
-    50%{transform:rotate(10deg) translate(2px,-4px)}
-  }
-  @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0.5)} 50%{opacity:1;transform:scale(1)} }
-  @keyframes scanLine { 0%{transform:translateY(-60px);opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{transform:translateY(60px);opacity:0} }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://mashallahautos.com/" />
 
-  .car-group { animation: floatCar 3.5s ease-in-out infinite; }
-  .wheel-fl { transform-box: fill-box; transform-origin: center; animation: spinWheel 2s linear infinite; }
-  .wheel-rl { transform-box: fill-box; transform-origin: center; animation: spinWheel 2s linear infinite; }
-  .wrench-group { transform-box: fill-box; transform-origin: 60px 140px; animation: wrenchSwing 2s ease-in-out infinite; }
-  .spark1 { animation: sparkle 1.4s 0.2s ease-in-out infinite; }
-  .spark2 { animation: sparkle 1.4s 0.7s ease-in-out infinite; }
-  .spark3 { animation: sparkle 1.4s 1.1s ease-in-out infinite; }
-  .scan { animation: scanLine 2.5s 0.5s ease-in-out infinite; }
-  .status-blink { animation: blink 1s ease-in-out infinite; }
+  <!-- SEO: Robots -->
+  <meta name="robots" content="index, follow" />
 
-  /* info cards floating around the car */
-  .hero-info-card {
-    position: absolute; background: rgba(26,26,26,0.92);
-    border: 1px solid rgba(192,57,43,0.4); border-radius: 10px;
-    padding: 10px 14px; display: flex; align-items: center; gap: 10px;
-    backdrop-filter: blur(4px);
-  }
-  .hero-info-card svg { width: 18px; height: 18px; fill: var(--red); flex-shrink: 0; }
-  .hero-info-card .ic-label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.8px; }
-  .hero-info-card .ic-value { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: white; }
-  .hic-1 { top: 8%; right: 0; animation: fadeUp 0.8s 0.8s both; }
-  .hic-2 { bottom: 10%; left: 0; animation: fadeUp 0.8s 1.0s both; }
-  .hic-3 { top: 38%; right: -4%; animation: fadeUp 0.8s 1.2s both; }
+  <!-- SEO: Author -->
+  <meta name="author" content="Tanveer Khan – MashAllah Autos" />
 
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display: none; }
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4);
-    color: var(--red-light); padding: 6px 14px; border-radius: 50px;
-    font-size: 13px; font-weight: 500; margin-bottom: 24px;
-  }
-  .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
-  .hero h1 {
-    font-family: var(--font-head); font-size: clamp(44px, 7vw, 80px);
-    font-weight: 800; color: white; line-height: 1.0;
-    letter-spacing: 1px; margin-bottom: 20px;
-  }
-  .hero h1 span { color: var(--red); }
-  .hero-sub {
-    color: #AAA; font-size: clamp(15px, 2vw, 17px); line-height: 1.7;
-    margin-bottom: 36px; max-width: 440px;
-  }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--red); color: white; padding: 14px 28px;
-    border-radius: 8px; font-size: 15px; font-weight: 600;
-    text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
-    border: 2px solid var(--red);
-  }
-  .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent; color: white; padding: 14px 28px;
-    border-radius: 8px; font-size: 15px; font-weight: 600;
-    text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
-    border: 2px solid rgba(255,255,255,0.3);
-  }
-  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
-  .hero-stats {
-    display: flex; gap: 32px; margin-top: 48px; padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-stat-num { font-family: var(--font-head); font-size: 32px; font-weight: 800; color: white; }
-  .hero-stat-num span { color: var(--red); }
-  .hero-stat-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  <!-- SEO: Open Graph (WhatsApp/social link previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mashallahautos.com/" />
+  <meta property="og:title" content="Car Mechanic in Sadar Bazar Lahore | MashAllah Autos" />
+  <meta property="og:description" content="Trusted car repair, doorstep mechanic, and roadside repair in Lahore. Engine, AC, brakes, electrical & more. Call 0310-2090633." />
+  <meta property="og:locale" content="en_PK" />
 
-  /* TRUST BAR */
-  .trust-bar {
-    background: var(--red); padding: 16px 5%;
-    display: flex; align-items: center; justify-content: center;
-    gap: 40px; flex-wrap: wrap;
+  <!-- SEO: Local Business Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "MashAllah Autos",
+    "description": "Trusted car mechanic in Sadar Bazar, Lahore offering engine repair, AC repair, brakes, doorstep mechanic, roadside repair, auto electrical, oil change, and denting & painting services.",
+    "url": "https://mashallahautos.com",
+    "telephone": "+923102090633",
+    "email": "tanveerkhan03102090633@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Tanveer Khan"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sadar Bazar",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "31.5656",
+      "longitude": "74.3425"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Auto Repair Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engine Repair & Tuning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Repair & Cooling" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brakes & Suspension" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Doorstep Mechanic" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roadside Repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auto Electrical" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oil & Fluid Change" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Denting & Painting" } }
+      ]
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Lahore"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://wa.me/923102090633"
+    ]
   }
-  .trust-item { display: flex; align-items: center; gap: 10px; color: white; font-size: 14px; font-weight: 500; }
-  .trust-item svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.85); flex-shrink: 0; }
+  </script>
 
-  /* SECTIONS */
-  section { padding: 80px 5%; }
-  .section-label {
-    font-size: 12px; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 2px; color: var(--red); margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: var(--font-head); font-size: clamp(30px, 5vw, 48px);
-    font-weight: 800; color: var(--black); line-height: 1.1; margin-bottom: 16px;
-  }
-  .section-sub { color: var(--gray); font-size: 16px; max-width: 540px; line-height: 1.7; }
-  .section-header { margin-bottom: 48px; }
-  .section-header.centered { text-align: center; }
-  .section-header.centered .section-sub { margin: 0 auto; }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0f0f0f;
+      --white: #ffffff;
+      --accent: #e63329;
+      --accent-dark: #b5251c;
+      --gray-100: #f5f5f5;
+      --gray-200: #e8e8e8;
+      --gray-400: #999;
+      --gray-600: #555;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--black); background: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
 
-  /* EMPATHY / STORY SECTION */
-  .story { background: var(--light-gray); }
-  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .story-visual {
-    background: var(--black); border-radius: 16px; padding: 40px;
-    position: relative; overflow: hidden;
-  }
-  .story-visual::before {
-    content: '';
-    position: absolute; bottom: -20px; right: -20px;
-    width: 200px; height: 200px;
-    background: var(--red); border-radius: 50%; opacity: 0.1;
-  }
-  .story-icon-big { width: 80px; height: 80px; fill: var(--red); margin-bottom: 24px; }
-  .story-quote {
-    font-family: var(--font-head); font-size: 24px; font-weight: 700;
-    color: white; line-height: 1.3; margin-bottom: 16px;
-  }
-  .story-quote-sub { color: #888; font-size: 14px; line-height: 1.6; }
-  .story-points { list-style: none; margin-top: 28px; }
-  .story-points li {
-    padding: 14px 0; border-bottom: 1px solid var(--border);
-    display: flex; align-items: flex-start; gap: 14px; font-size: 15px; color: var(--dark);
-  }
-  .story-points li:last-child { border-bottom: none; }
-  .story-check { width: 22px; height: 22px; background: var(--red-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .story-check svg { width: 12px; height: 12px; fill: var(--red); }
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 60px;
+    }
+    .nav-brand { color: var(--white); font-weight: 700; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: var(--gray-400); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .btn-wa { background: #25D366; color: var(--white); padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
 
-  /* SERVICES */
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-  .service-card {
-    background: white; border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 28px 24px; transition: all 0.25s; cursor: default;
-  }
-  .service-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: var(--shadow); }
-  .service-icon { width: 48px; height: 48px; background: var(--red-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-  .service-icon svg { width: 26px; height: 26px; fill: var(--red); }
-  .service-card h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
-  .service-card p { color: var(--gray); font-size: 14px; line-height: 1.6; }
-  .service-tag { display: inline-block; background: var(--red-bg); color: var(--red); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 50px; margin-top: 12px; letter-spacing: 0.5px; }
+    /* HERO */
+    .hero { background: var(--black); color: var(--white); padding: 80px 5% 70px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(230,51,41,0.15); border: 1px solid var(--accent);
+      color: var(--accent); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+      padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15;
+      max-width: 680px; margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.05rem; color: #ccc; max-width: 560px; margin-bottom: 2rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary { background: var(--accent); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary { border: 1px solid #444; color: var(--white); padding: 0.75rem 1.75rem; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: #888; }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; border-top: 1px solid #2a2a2a; padding-top: 2rem; }
+    .stat-item .num { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .stat-item .label { font-size: 0.8rem; color: var(--gray-400); }
 
-  /* FEATURED SERVICES (Doorstep + Roadside Repair) */
-  .featured-services { background: var(--black); }
-  .featured-services .section-title { color: white; }
-  .featured-services .section-sub { color: #888; }
-  .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .featured-card {
-    border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 36px 32px;
-    position: relative; overflow: hidden; transition: border-color 0.2s;
-  }
-  .featured-card:hover { border-color: var(--red); }
-  .featured-card::before {
-    content: ''; position: absolute; top: 0; right: 0;
-    width: 120px; height: 120px;
-    background: var(--red); border-radius: 50%;
-    transform: translate(50%, -50%); opacity: 0.08;
-  }
-  .featured-number {
-    font-family: var(--font-head); font-size: 64px; font-weight: 800;
-    color: rgba(255,255,255,0.04); position: absolute; top: 12px; right: 24px;
-    line-height: 1;
-  }
-  .featured-icon { width: 56px; height: 56px; background: rgba(192,57,43,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-  .featured-icon svg { width: 30px; height: 30px; fill: var(--red); }
-  .featured-card h3 { font-family: var(--font-head); font-size: 26px; font-weight: 800; color: white; margin-bottom: 12px; }
-  .featured-card p { color: #888; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
-  .featured-list { list-style: none; }
-  .featured-list li { color: #AAA; font-size: 14px; padding: 6px 0; display: flex; align-items: center; gap: 10px; }
-  .featured-list li::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+    /* TRUST BAR */
+    .trust-bar { background: var(--accent); display: flex; justify-content: center; flex-wrap: wrap; }
+    .trust-item { color: var(--white); font-size: 0.82rem; font-weight: 600; padding: 0.7rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; gap: 0.4rem; }
+    .trust-item:last-child { border-right: none; }
 
-  /* WHY US */
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-  .why-card {
-    text-align: center; padding: 32px 20px;
-    border: 1px solid var(--border); border-radius: var(--radius);
-    transition: all 0.2s;
-  }
-  .why-card:hover { background: var(--red); border-color: var(--red); }
-  .why-card:hover .why-icon svg { fill: white; }
-  .why-card:hover .why-icon { background: rgba(255,255,255,0.2); }
-  .why-card:hover h4 { color: white; }
-  .why-card:hover p { color: rgba(255,255,255,0.8); }
-  .why-icon { width: 56px; height: 56px; background: var(--red-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; transition: background 0.2s; }
-  .why-icon svg { width: 28px; height: 28px; fill: var(--red); transition: fill 0.2s; }
-  .why-card h4 { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 8px; transition: color 0.2s; }
-  .why-card p { color: var(--gray); font-size: 13px; line-height: 1.6; transition: color 0.2s; }
+    /* SECTIONS */
+    section { padding: 70px 5%; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .section-intro { color: var(--gray-600); max-width: 560px; margin-bottom: 3rem; font-size: 1rem; }
 
-  /* CONTACT */
-  .contact { background: var(--light-gray); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  .contact-info h2 { font-family: var(--font-head); font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--black); margin-bottom: 14px; }
-  .contact-info p { color: var(--gray); font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
-  .contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
-  .contact-item { display: flex; align-items: flex-start; gap: 14px; }
-  .contact-item-icon { width: 44px; height: 44px; background: var(--red-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .contact-item-icon svg { width: 22px; height: 22px; fill: var(--red); }
-  .contact-item-label { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
-  .contact-item-value { font-size: 15px; font-weight: 500; color: var(--black); }
-  .contact-item-value a { color: var(--black); text-decoration: none; }
-  .contact-item-value a:hover { color: var(--red); }
-  .whatsapp-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: #25D366; color: white; padding: 13px 24px;
-    border-radius: 8px; font-size: 15px; font-weight: 600;
-    text-decoration: none; transition: all 0.2s; border: 2px solid #25D366;
-  }
-  .whatsapp-btn:hover { background: #1EB85A; border-color: #1EB85A; }
-  .whatsapp-btn svg { width: 22px; height: 22px; fill: white; }
+    /* ABOUT */
+    .about { background: var(--gray-100); }
+    .about-inner { max-width: 700px; }
+    .about blockquote { border-left: 3px solid var(--accent); padding-left: 1.2rem; margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--gray-600); font-style: italic; }
+    .about-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .about-points li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.95rem; }
+    .about-points li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; }
 
-  /* FORM */
-  .contact-form {
-    background: white; border-radius: 14px; padding: 36px;
-    box-shadow: var(--shadow); border: 1px solid var(--border);
-  }
-  .form-title { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
-  .form-sub { color: var(--gray); font-size: 14px; margin-bottom: 24px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .form-group { margin-bottom: 16px; }
-  .form-group label { display: block; font-size: 13px; font-weight: 500; color: var(--dark); margin-bottom: 6px; }
-  .form-group input, .form-group select, .form-group textarea {
-    width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
-    border-radius: 7px; font-family: var(--font-body); font-size: 14px;
-    color: var(--dark); background: white; transition: border-color 0.2s; outline: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); }
-  .form-group textarea { resize: vertical; min-height: 90px; }
-  .form-submit {
-    width: 100%; background: var(--red); color: white; border: none;
-    padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 600;
-    font-family: var(--font-body); cursor: pointer; transition: background 0.2s;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .form-submit:hover { background: var(--red-dark); }
-  .form-submit:disabled { background: #b85a50; cursor: wait; }
-  .form-submit svg { width: 18px; height: 18px; fill: white; }
-  .form-note { text-align: center; font-size: 12px; color: var(--gray); margin-top: 10px; }
-  .form-status {
-    display: none; margin-top: 14px; padding: 12px 14px; border-radius: 8px;
-    font-size: 14px; line-height: 1.5;
-  }
-  .form-status.success { display: block; background: #EAF7EE; color: #1E6B3A; border: 1px solid #B8E0C6; }
-  .form-status.error { display: block; background: #FDEDEC; color: #922B21; border: 1px solid #F5B7B1; }
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+    .service-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; position: relative; }
+    .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(230,51,41,0.08); }
+    .service-card .badge { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 3px; }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.875rem; color: var(--gray-600); line-height: 1.55; }
 
-  /* MAP */
-  .map-section { padding: 0; }
-  .map-section iframe { width: 100%; height: 380px; border: none; display: block; }
+    /* MOBILE SERVICES */
+    .mobile-section { background: var(--black); color: var(--white); }
+    .mobile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .mobile-card { border: 1px solid #2a2a2a; border-radius: 8px; padding: 1.75rem; }
+    .mobile-card .num { font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem; }
+    .mobile-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .mobile-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .mobile-card ul li { font-size: 0.875rem; color: #aaa; display: flex; gap: 0.5rem; }
+    .mobile-card ul li::before { content: "→"; color: var(--accent); flex-shrink: 0; }
 
-  /* FOOTER */
-  footer { background: var(--black); padding: 40px 5% 24px; }
-  .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; }
-  .footer-brand { max-width: 280px; }
-  .footer-brand-name { font-family: var(--font-head); font-size: 24px; font-weight: 800; color: white; margin-bottom: 8px; }
-  .footer-brand-name span { color: var(--red); }
-  .footer-brand-desc { color: #777; font-size: 14px; line-height: 1.6; }
-  .footer-links h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: white; margin-bottom: 14px; letter-spacing: 0.5px; }
-  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .footer-links ul a { color: #777; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-  .footer-links ul a:hover { color: white; }
-  .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-copy { color: #555; font-size: 13px; }
-  .footer-copy span { color: var(--red); }
-  .footer-call a { color: #AAA; font-size: 14px; text-decoration: none; font-weight: 500; }
-  .footer-call a:hover { color: white; }
+    /* WHY US */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+    .why-card { background: var(--gray-100); border-radius: 8px; padding: 1.5rem; }
+    .why-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .why-card p { font-size: 0.85rem; color: var(--gray-600); }
 
-  /* FLOATING WHATSAPP */
-  .float-wa {
-    position: fixed; bottom: 24px; right: 24px; z-index: 999;
-    background: #25D366; color: white; width: 58px; height: 58px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none;
-    animation: floatBounce 3s ease-in-out infinite;
-    transition: transform 0.2s;
-  }
-  .float-wa:hover { transform: scale(1.1) !important; animation: none; }
-  .float-wa svg { width: 30px; height: 30px; fill: white; }
-  @keyframes floatBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    /* CONTACT */
+    .contact-section { background: var(--gray-100); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-item { margin-bottom: 1.25rem; }
+    .contact-item .label { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .contact-item a, .contact-item span { font-size: 1rem; font-weight: 600; color: var(--black); }
+    .contact-item a:hover { color: var(--accent); }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: var(--white); padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 700; margin-top: 1rem; font-size: 0.95rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--gray-200); border-radius: 6px; font-family: var(--font); font-size: 0.9rem; background: var(--white); color: var(--black); transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-form button { background: var(--accent); color: var(--white); padding: 0.8rem; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, opacity 0.2s; }
+    .contact-form button:hover { background: var(--accent-dark); }
+    .contact-form button:disabled { opacity: 0.7; cursor: wait; }
+    .form-note { font-size: 0.78rem; color: var(--gray-400); }
+    .form-status { display: none; padding: 0.85rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+    .form-status.is-visible { display: block; }
+    .form-status.is-success { background: #eaf8ee; color: #1d6b35; border: 1px solid #b7e2c3; }
+    .form-status.is-error { background: #fff0ef; color: #9f2d26; border: 1px solid #f3c2bd; }
 
-  /* SCROLL REVEAL */
-  .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.55s ease, transform 0.55s ease; }
-  .reveal.hidden { opacity: 0; transform: translateY(24px); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* FOOTER */
+    footer { background: var(--black); color: var(--white); padding: 50px 5% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+    .footer-brand { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .footer-desc { font-size: 0.85rem; color: #777; line-height: 1.6; }
+    .footer-col h5 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { font-size: 0.85rem; color: #777; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid #1a1a1a; padding-top: 1.25rem; font-size: 0.8rem; color: #555; }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--black); padding: 20px 5%; gap: 16px; }
-    .hero::before { display: none; }
-    .hero { padding: 90px 5% 50px; }
-    .hero-stats { gap: 20px; }
-    .story-grid, .featured-grid, .contact-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-top { flex-direction: column; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    section { padding: 60px 5%; }
-  }
-</style>
+    /* STICKY CALL BAR */
+    .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--accent); color: var(--white); text-align: center; padding: 0.9rem; font-weight: 700; font-size: 1rem; }
+
+    /* BURGER BUTTON */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 36px; height: 36px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .burger span {
+      display: block; height: 2px; width: 100%;
+      background: var(--white); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MOBILE DRAWER */
+    .mobile-drawer {
+      display: none;
+      position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+      background: var(--black); z-index: 99;
+      flex-direction: column; align-items: flex-start;
+      padding: 2rem 5%;
+      gap: 0;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+    .mobile-drawer a {
+      color: var(--white); font-size: 1.3rem; font-weight: 600;
+      padding: 1rem 0; border-bottom: 1px solid #1f1f1f; width: 100%;
+    }
+    .mobile-drawer .drawer-wa {
+      margin-top: 1.5rem;
+      background: #25D366; color: var(--white);
+      padding: 0.85rem 1.5rem; border-radius: 6px;
+      font-size: 1rem; font-weight: 700; border-bottom: none; width: auto;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .mobile-drawer { display: flex; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .sticky-call { display: block; }
+      body { padding-bottom: 56px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/923102090633" target="_blank" rel="noopener noreferrer" class="float-wa" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-brand">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+  <nav>
+    <span class="nav-brand">MashAllah Autos</span>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/923102090633" class="btn-wa" target="_blank">WhatsApp Us</a>
     </div>
-    <span class="nav-brand-text">MashAllah <span>Auto</span></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="https://wa.me/923102090633" target="_blank" rel="noopener noreferrer" class="nav-cta">WhatsApp Us</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+    <button class="burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <!-- LEFT: text -->
-    <div class="hero-content">
-      <div class="hero-badge">Available Now &bull; Lahore</div>
-      <h1>Your Car<br>Deserves<br><span>Honest</span> Hands</h1>
-      <p class="hero-sub">Stuck on the road? Engine trouble at home? Tanveer Khan and his team come to you — or tow your car safely to the garage. No overcharging. No guesswork. Just real, reliable repairs.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/923102090633" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp Now
-        </a>
-        <a href="#contact" class="btn-outline">
-          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          Send a Message
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">10<span>+</span></div>
-          <div class="hero-stat-label">Years Experience</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">500<span>+</span></div>
-          <div class="hero-stat-label">Cars Repaired</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">24<span>/7</span></div>
-          <div class="hero-stat-label">Available</div>
-        </div>
-      </div>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="drawer">
+    <a href="#services" class="drawer-link">Services</a>
+    <a href="#why-us" class="drawer-link">Why Us</a>
+    <a href="#contact" class="drawer-link">Contact</a>
+    <a href="https://wa.me/923102090633" class="drawer-wa" target="_blank">WhatsApp Us</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-badge">Available Now · Sadar Bazar, Lahore · 9am–9pm Daily</div>
+    <!-- H1: Primary keyword -->
+    <h1>Trusted Car Mechanic in <span>Sadar Bazar Lahore</span></h1>
+    <p>Stuck on the road? Engine trouble at home? Tanveer Khan and his team come to you — or tow your car safely to the garage. No overcharging. No guesswork. Just real, reliable repairs.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/923102090633" class="btn-primary" target="_blank">WhatsApp Now</a>
+      <a href="#contact" class="btn-secondary">Send a Message</a>
     </div>
-
-    <!-- RIGHT: animated SVG illustration -->
-    <div class="hero-visual">
-      <div class="hero-svg-wrap">
-
-        <!-- Floating info cards -->
-        <div class="hero-info-card hic-1">
-          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-          <div><div class="ic-label">Status</div><div class="ic-value">Doorstep Ready</div></div>
-        </div>
-        <div class="hero-info-card hic-2">
-          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-          <div><div class="ic-label">Response</div><div class="ic-value">30 min avg</div></div>
-        </div>
-        <div class="hero-info-card hic-3">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <div><div class="ic-label">Call Now</div><div class="ic-value">0310-2090633</div></div>
-        </div>
-
-        <!-- Main SVG Illustration -->
-        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-          <defs>
-            <clipPath id="scanClip"><rect x="100" y="100" width="280" height="120" rx="8"/></clipPath>
-          </defs>
-
-          <!-- ground shadow -->
-          <ellipse cx="240" cy="320" rx="160" ry="14" fill="rgba(192,57,43,0.12)"/>
-
-          <!-- === CAR GROUP (floats up/down) === -->
-          <g class="car-group">
-
-            <!-- car body shadow -->
-            <ellipse cx="240" cy="305" rx="145" ry="10" fill="rgba(0,0,0,0.35)"/>
-
-            <!-- car body lower -->
-            <rect x="82" y="230" width="316" height="62" rx="10" fill="#2A2A2A"/>
-
-            <!-- car body upper (cabin) -->
-            <path d="M148 170 Q162 148 200 142 L285 142 Q318 148 332 170 L355 230 H125 Z" fill="#333333"/>
-
-            <!-- windshield -->
-            <path d="M168 172 Q178 152 208 148 L275 148 Q305 152 315 172 L330 218 H150 Z" fill="#1A3A5C" opacity="0.85"/>
-            <!-- windshield glare -->
-            <path d="M176 176 Q184 160 206 156 L240 156 L245 218 H155 Z" fill="rgba(255,255,255,0.06)"/>
-
-            <!-- door line -->
-            <line x1="240" y1="195" x2="240" y2="292" stroke="#444" stroke-width="1.5"/>
-
-            <!-- door handles -->
-            <rect x="200" y="248" width="22" height="6" rx="3" fill="#555"/>
-            <rect x="258" y="248" width="22" height="6" rx="3" fill="#555"/>
-
-            <!-- front bumper -->
-            <path d="M82 270 Q72 275 70 285 L82 292 Z" fill="#222"/>
-            <rect x="70" y="285" width="18" height="16" rx="4" fill="#222"/>
-
-            <!-- rear bumper -->
-            <path d="M398 270 Q408 275 410 285 L398 292 Z" fill="#222"/>
-            <rect x="392" y="285" width="18" height="16" rx="4" fill="#222"/>
-
-            <!-- headlights -->
-            <rect x="82" y="245" width="34" height="16" rx="4" fill="#1A3A5C"/>
-            <rect x="84" y="247" width="30" height="12" rx="3" fill="#4A90D9" opacity="0.7"/>
-            <!-- headlight glow -->
-            <rect x="84" y="247" width="10" height="12" rx="2" fill="#7DB8F0" opacity="0.9" class="status-blink"/>
-
-            <!-- tail lights -->
-            <rect x="364" y="245" width="34" height="16" rx="4" fill="#5C1A1A"/>
-            <rect x="366" y="247" width="30" height="12" rx="3" fill="#C0392B" opacity="0.7"/>
-
-            <!-- front wheel -->
-            <g class="wheel-fl">
-              <circle cx="155" cy="298" r="34" fill="#1A1A1A"/>
-              <circle cx="155" cy="298" r="26" fill="#252525"/>
-              <circle cx="155" cy="298" r="18" fill="#1E1E1E"/>
-              <line x1="155" y1="272" x2="155" y2="324" stroke="#444" stroke-width="3"/>
-              <line x1="129" y1="298" x2="181" y2="298" stroke="#444" stroke-width="3"/>
-              <line x1="136" y1="279" x2="174" y2="317" stroke="#444" stroke-width="3"/>
-              <line x1="174" y1="279" x2="136" y2="317" stroke="#444" stroke-width="3"/>
-              <circle cx="155" cy="298" r="6" fill="#C0392B"/>
-            </g>
-
-            <!-- rear wheel -->
-            <g class="wheel-rl">
-              <circle cx="325" cy="298" r="34" fill="#1A1A1A"/>
-              <circle cx="325" cy="298" r="26" fill="#252525"/>
-              <circle cx="325" cy="298" r="18" fill="#1E1E1E"/>
-              <line x1="325" y1="272" x2="325" y2="324" stroke="#444" stroke-width="3"/>
-              <line x1="299" y1="298" x2="351" y2="298" stroke="#444" stroke-width="3"/>
-              <line x1="306" y1="279" x2="344" y2="317" stroke="#444" stroke-width="3"/>
-              <line x1="344" y1="279" x2="306" y2="317" stroke="#444" stroke-width="3"/>
-              <circle cx="325" cy="298" r="6" fill="#C0392B"/>
-            </g>
-
-            <!-- diagnostic scan line over windshield -->
-            <g clip-path="url(#scanClip)">
-              <rect x="100" y="100" width="280" height="4" fill="rgba(192,57,43,0.5)" rx="2" class="scan"/>
-            </g>
-
-            <!-- roof rack / logo area -->
-            <rect x="195" y="140" width="90" height="6" rx="3" fill="#C0392B" opacity="0.8"/>
-
-          </g>
-          <!-- === END CAR GROUP === -->
-
-          <!-- === MECHANIC / WRENCH SCENE (right side, behind car slightly) === -->
-          <g class="wrench-group">
-            <!-- wrench handle -->
-            <rect x="375" y="118" width="14" height="72" rx="7" fill="#888" transform="rotate(30 382 154)"/>
-            <!-- wrench head top -->
-            <circle cx="394" cy="108" r="14" fill="none" stroke="#888" stroke-width="8"/>
-            <rect x="387" y="100" width="14" height="10" rx="2" fill="#888"/>
-            <!-- wrench head bottom open end -->
-            <rect x="370" y="170" width="16" height="8" rx="3" fill="#888" transform="rotate(30 378 174)"/>
-          </g>
-
-          <!-- spark particles near wrench -->
-          <circle cx="408" cy="120" r="4" fill="#C0392B" class="spark1"/>
-          <circle cx="418" cy="108" r="3" fill="#E67E22" class="spark2"/>
-          <circle cx="400" cy="100" r="3.5" fill="#C0392B" class="spark3"/>
-          <circle cx="424" cy="128" r="2.5" fill="#F39C12" class="spark1"/>
-
-          <!-- === TOOLBOX bottom right === -->
-          <rect x="370" y="310" width="76" height="42" rx="6" fill="#333"/>
-          <rect x="370" y="310" width="76" height="14" rx="6" fill="#444"/>
-          <rect x="397" y="305" width="22" height="10" rx="5" fill="#555"/>
-          <rect x="376" y="328" width="16" height="8" rx="3" fill="#C0392B" opacity="0.8"/>
-          <rect x="396" y="328" width="16" height="8" rx="3" fill="#C0392B" opacity="0.6"/>
-          <rect x="416" y="328" width="16" height="8" rx="3" fill="#C0392B" opacity="0.4"/>
-
-          <!-- === OIL DRIP can left side === -->
-          <rect x="30" y="270" width="30" height="48" rx="6" fill="#333"/>
-          <rect x="34" y="262" width="22" height="12" rx="4" fill="#444"/>
-          <rect x="42" y="252" width="6" height="14" rx="3" fill="#555"/>
-          <!-- oil drops -->
-          <ellipse cx="45" cy="322" rx="4" ry="6" fill="#C0392B" opacity="0.7"/>
-          <ellipse cx="43" cy="334" rx="3" ry="5" fill="#C0392B" opacity="0.5"/>
-
-          <!-- decorative grid dots background -->
-          <g opacity="0.08">
-            <circle cx="60" cy="60" r="2" fill="white"/> <circle cx="90" cy="60" r="2" fill="white"/> <circle cx="120" cy="60" r="2" fill="white"/> <circle cx="150" cy="60" r="2" fill="white"/>
-            <circle cx="60" cy="90" r="2" fill="white"/> <circle cx="90" cy="90" r="2" fill="white"/> <circle cx="120" cy="90" r="2" fill="white"/> <circle cx="150" cy="90" r="2" fill="white"/>
-            <circle cx="330" cy="60" r="2" fill="white"/> <circle cx="360" cy="60" r="2" fill="white"/> <circle cx="390" cy="60" r="2" fill="white"/> <circle cx="420" cy="60" r="2" fill="white"/>
-            <circle cx="330" cy="90" r="2" fill="white"/> <circle cx="360" cy="90" r="2" fill="white"/> <circle cx="390" cy="90" r="2" fill="white"/> <circle cx="420" cy="90" r="2" fill="white"/>
-          </g>
-        </svg>
-      </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="num">10+</div><div class="label">Years Experience</div></div>
+      <div class="stat-item"><div class="num">500+</div><div class="label">Cars Repaired</div></div>
+      <div class="stat-item"><div class="num">9am–9pm</div><div class="label">Daily Hours</div></div>
+      <div class="stat-item"><div class="num">30 min</div><div class="label">Avg Response</div></div>
     </div>
-    <!-- END RIGHT -->
+  </section>
 
+  <div class="trust-bar">
+    <div class="trust-item">✓ Honest &amp; Transparent Pricing</div>
+    <div class="trust-item">✓ We Come to Your Doorstep</div>
+    <div class="trust-item">✓ On-the-Spot Roadside Repair</div>
+    <div class="trust-item">✓ Fast 30-Minute Response</div>
   </div>
-</section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item">
-    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-    Honest & Transparent Pricing
-  </div>
-  <div class="trust-item">
-    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-    We Come to Your Doorstep
-  </div>
-  <div class="trust-item">
-    <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5l1.96 2.5H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2.22-3c-.55-.61-1.35-1-2.22-1s-1.67.39-2.22 1H3V6h12v9H8.22zM18 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
-    On-the-Spot Roadside Repair
-  </div>
-  <div class="trust-item">
-    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-    Fast Response Time
-  </div>
-</div>
-
-<!-- EMPATHY / STORY -->
-<section class="story">
-  <div class="story-grid">
-    <div class="story-visual reveal">
-      <svg class="story-icon-big" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-      <div class="story-quote">"We know how stressful a broken car can be — especially when you're stuck in the middle of nowhere."</div>
-      <div class="story-quote-sub">That's why Tanveer Khan built MashAllah Autos around one simple idea: fix it fast, fix it right, and be honest about every step.</div>
-    </div>
-    <div class="reveal">
+  <section class="about" id="about">
+    <div class="about-inner">
       <div class="section-label">Our Promise</div>
-      <h2 class="section-title">We've All Been There</h2>
-      <p style="color:var(--gray);font-size:15px;line-height:1.7;margin-bottom:24px;">A dead battery on a hot afternoon. An engine light that won't go off. A sudden breakdown when you're running late. These moments are exhausting — and the last thing you need is a mechanic who takes advantage of them.</p>
-      <p style="color:var(--gray);font-size:15px;line-height:1.7;margin-bottom:24px;">At MashAllah Autos, we show up with tools and honesty. We explain what's wrong in plain language, tell you the cost upfront, and get the job done without any nasty surprises on the bill.</p>
-      <ul class="story-points">
-        <li>
-          <div class="story-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-          <span>We explain the problem before we touch anything</span>
-        </li>
-        <li>
-          <div class="story-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-          <span>Clear pricing — you approve the cost before work starts</span>
-        </li>
-        <li>
-          <div class="story-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-          <span>Quality parts, no shortcuts, no cut corners</span>
-        </li>
-        <li>
-          <div class="story-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-          <span>We come to you — home, office, or roadside</span>
-        </li>
+      <h2>Lahore's Most Trusted Car Mechanic</h2>
+      <blockquote>"We know how stressful a broken car can be — especially when you're stuck in the middle of nowhere."</blockquote>
+      <p style="color:#555; margin-bottom:1.25rem;">That's why Tanveer Khan built MashAllah Autos around one simple idea: fix it fast, fix it right, and be honest about every step.</p>
+      <ul class="about-points">
+        <li>We explain the problem before we touch anything</li>
+        <li>Clear pricing — you approve the cost before work starts</li>
+        <li>Quality parts, no shortcuts, no cut corners</li>
+        <li>We come to you — home, office, or roadside anywhere in Lahore</li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header centered reveal">
+  <section id="services">
     <div class="section-label">What We Fix</div>
-    <h2 class="section-title">Complete Auto Care Services</h2>
-    <p class="section-sub">From routine oil changes to full engine overhauls — if it's your car, we handle it.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
-      <h3>Engine Repair & Tuning</h3>
-      <p>Full diagnostics, tune-ups, engine overhauls, and timing belt replacements. We get to the root cause — not just the symptoms.</p>
-      <span class="service-tag">Most Requested</span>
+    <h2>Complete Auto Repair Services in Lahore</h2>
+    <p class="section-intro">From routine oil changes to full engine overhauls — if it's your car, we handle it across Lahore.</p>
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="badge">Most Requested</span>
+        <h3>Engine Repair &amp; Tuning in Lahore</h3>
+        <p>Full diagnostics, tune-ups, engine overhauls, and timing belt replacements. We get to the root cause — not just the symptoms.</p>
+      </article>
+      <article class="service-card">
+        <span class="badge">Summer Special</span>
+        <h3>Car AC Repair &amp; Cooling Lahore</h3>
+        <p>Gas refilling, compressor repair, condenser replacement, and electrical fault diagnosis. Stay cool on Lahore's hottest days.</p>
+      </article>
+      <article class="service-card">
+        <span class="badge">Safety Critical</span>
+        <h3>Brakes &amp; Suspension Repair</h3>
+        <p>Brake pad replacement, disc repair, shock absorber service, and wheel alignment. Your safety starts with your brakes.</p>
+      </article>
+      <article class="service-card">
+        <h3>Auto Electrical Repair Lahore</h3>
+        <p>Battery replacement, alternator and starter motor repair, wiring faults, ignition issues, and sensor diagnostics.</p>
+      </article>
+      <article class="service-card">
+        <h3>Oil &amp; Fluid Change Services</h3>
+        <p>Engine oil change, brake fluid, coolant, transmission fluid, and power steering fluid — all with genuine recommended products.</p>
+      </article>
+      <article class="service-card">
+        <h3>Denting &amp; Painting Lahore</h3>
+        <p>Scratch removal, dent repair, panel beating, and touch-up painting. We restore your car's look without breaking the bank.</p>
+      </article>
+      <article class="service-card">
+        <h3>Tyres &amp; Wheel Alignment</h3>
+        <p>Tyre fitting, puncture repair, wheel balancing, and alignment. Keep your ride smooth and your fuel efficiency high.</p>
+      </article>
+      <article class="service-card">
+        <h3>Clutch &amp; Gearbox Repair</h3>
+        <p>Clutch plate replacement, gear shifting issues, automatic transmission servicing — all handled with precision and care.</p>
+      </article>
     </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></div>
-      <h3>AC Repair & Cooling</h3>
-      <p>Gas refilling, compressor repair, condenser replacement, and electrical fault diagnosis. Stay cool on Lahore's hottest days.</p>
-      <span class="service-tag">Summer Special</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
-      <h3>Brakes & Suspension</h3>
-      <p>Brake pad replacement, disc repair, shock absorber service, and wheel alignment. Your safety starts with your brakes.</p>
-      <span class="service-tag">Safety Critical</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M7 4v2H4V4H2v16h2v-2h3v2h2V4H7zm0 10H4v-4h3v4zM20.5 4h-4c-.83 0-1.5.67-1.5 1.5v13c0 .83.67 1.5 1.5 1.5h4c.83 0 1.5-.67 1.5-1.5v-13c0-.83-.67-1.5-1.5-1.5zM20 18h-3V6h3v12z"/></svg></div>
-      <h3>Auto Electrical</h3>
-      <p>Battery replacement, alternator and starter motor repair, wiring faults, ignition issues, and sensor diagnostics.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-      <h3>Oil & Fluid Services</h3>
-      <p>Engine oil change, brake fluid, coolant, transmission fluid, and power steering fluid — all with genuine recommended products.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z"/></svg></div>
-      <h3>Denting & Painting</h3>
-      <p>Scratch removal, dent repair, panel beating, and touch-up painting. We restore your car's look without breaking the bank.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 3a7 7 0 0 1 7 7c0 1.61-.55 3.09-1.46 4.28L7.72 6.46A6.97 6.97 0 0 1 12 5zm0 14a7 7 0 0 1-7-7c0-1.61.55-3.09 1.46-4.28l9.82 9.82A6.97 6.97 0 0 1 12 19z"/></svg></div>
-      <h3>Tyres & Wheel Alignment</h3>
-      <p>Tyre fitting, puncture repair, wheel balancing, and alignment. Keep your ride smooth and your fuel efficiency high.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
-      <h3>Clutch & Gearbox</h3>
-      <p>Clutch plate replacement, gear shifting issues, automatic transmission servicing — all handled with precision and care.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- FEATURED: DOORSTEP + ROADSIDE REPAIR -->
-<section class="featured-services" id="mobile">
-  <div class="section-header reveal">
-    <div class="section-label" style="color:#F5B7B1">Our Signature Services</div>
-    <h2 class="section-title">We Come to You</h2>
-    <p class="section-sub">No need to push your car or trouble your family. We'll be there.</p>
-  </div>
-  <div class="featured-grid">
-    <div class="featured-card reveal">
-      <div class="featured-number">01</div>
-      <div class="featured-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+  <section class="mobile-section" id="mobile">
+    <div class="section-label">Our Signature Services</div>
+    <h2>Doorstep Mechanic &amp; Roadside Repair Lahore</h2>
+    <p class="section-intro" style="color:#aaa;">No need to push your car or trouble your family. We'll be there.</p>
+    <div class="mobile-grid">
+      <div class="mobile-card">
+        <div class="num">01</div>
+        <h3>Doorstep Mechanic Lahore</h3>
+        <ul>
+          <li>Battery jumpstart &amp; replacement</li>
+          <li>Oil change at your doorstep</li>
+          <li>AC gas &amp; quick diagnostics</li>
+          <li>Minor repairs &amp; part replacements</li>
+          <li>Tyre puncture on the spot</li>
+        </ul>
       </div>
-      <h3>Doorstep Mechanic</h3>
-      <p>Car won't start? AC stopped working? Tanveer Khan will come directly to your home, office, or wherever you are in Lahore and get it checked on the spot.</p>
-      <ul class="featured-list">
-        <li>Battery jumpstart & replacement</li>
-        <li>Oil change at your doorstep</li>
-        <li>AC gas & quick diagnostics</li>
-        <li>Minor repairs & part replacements</li>
-        <li>Tyre puncture on the spot</li>
-      </ul>
-    </div>
-    <div class="featured-card reveal">
-      <div class="featured-number">02</div>
-      <div class="featured-icon">
-        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5l1.96 2.5H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2.22-3c-.55-.61-1.35-1-2.22-1s-1.67.39-2.22 1H3V6h12v9H8.22zM18 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+      <div class="mobile-card">
+        <div class="num">02</div>
+        <h3>On-the-Spot Roadside Repair Lahore</h3>
+        <ul>
+          <li>Roadside breakdown diagnosis</li>
+          <li>Battery, wiring, and starter checks</li>
+          <li>Minor mechanical repairs on the spot</li>
+          <li>Quick help across Lahore</li>
+          <li>Clear advice if workshop repair is needed</li>
+        </ul>
       </div>
-      <h3>On-the-Spot Roadside Repair</h3>
-      <p>If your car breaks down on the road, we come to you with the tools and experience to diagnose and fix common problems right where you're stranded.</p>
-      <ul class="featured-list">
-        <li>Roadside breakdown diagnosis</li>
-        <li>Battery, wiring, and starter checks</li>
-        <li>Minor mechanical repairs on the spot</li>
-        <li>Quick help across Lahore</li>
-        <li>Clear advice if workshop repair is needed</li>
-      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY US -->
-<section id="why-us">
-  <div class="section-header centered reveal">
+  <section id="why-us">
     <div class="section-label">Why MashAllah Autos</div>
-    <h2 class="section-title">The Difference You'll Feel</h2>
-    <p class="section-sub">We're not just another mechanic. We're the one you'll call again and recommend to everyone you know.</p>
-  </div>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
-      <h4>No Hidden Charges</h4>
-      <p>You see the full price before we start. What we quote is what you pay. Period.</p>
+    <h2>The Difference You'll Feel</h2>
+    <p class="section-intro">We're not just another mechanic. We're the one you'll call again and recommend to everyone you know.</p>
+    <div class="why-grid">
+      <div class="why-card"><h4>No Hidden Charges</h4><p>You see the full price before we start. What we quote is what you pay. Period.</p></div>
+      <div class="why-card"><h4>Fast Response</h4><p>We pick up quickly and aim to reach you within 30 minutes. Your time matters as much as your car.</p></div>
+      <div class="why-card"><h4>Genuine Parts Only</h4><p>No cheap substitutes. We use quality-certified parts so repairs actually last.</p></div>
+      <div class="why-card"><h4>10+ Years Experience</h4><p>Tanveer Khan has been fixing cars in Lahore for over a decade. He's seen everything.</p></div>
+      <div class="why-card"><h4>Clear Communication</h4><p>We explain everything in simple terms. No technical jargon used to confuse or mislead.</p></div>
+      <div class="why-card"><h4>We Come to You</h4><p>Doorstep service anywhere in Lahore. No need to arrange a tow when we can fix it on-site.</p></div>
     </div>
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
-      <h4>Fast Response</h4>
-      <p>We pick up quickly and aim to reach you fast. Your time matters as much as your car.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
-      <h4>Genuine Parts Only</h4>
-      <p>No cheap substitutes. We use quality-certified parts so repairs actually last.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-      <h4>10+ Years Experience</h4>
-      <p>Tanveer Khan has been fixing cars in Lahore for over a decade. He's seen everything.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
-      <h4>Clear Communication</h4>
-      <p>We explain everything in simple terms. No technical jargon used to confuse or mislead you.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-      <h4>We Come to You</h4>
-      <p>Doorstep service anywhere in Lahore. No need to arrange a tow when we can fix it on-site.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-grid">
-    <div class="reveal">
-      <div class="section-label">Get In Touch</div>
-      <h2 style="font-family:var(--font-head);font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--black);margin-bottom:14px;">Talk to Tanveer Khan</h2>
-      <p style="color:var(--gray);font-size:15px;line-height:1.7;margin-bottom:28px;">Don't wait until a small issue becomes a big bill. Reach out now and describe your problem — we'll tell you exactly what's needed and how we can help.</p>
-      <div class="contact-items">
+  <section class="contact-section" id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2>Talk to Tanveer Khan</h2>
+    <p class="section-intro">Don't wait until a small issue becomes a big bill. Reach out now — we'll tell you exactly what's needed.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
         <div class="contact-item">
-          <div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-          <div>
-            <div class="contact-item-label">Phone / WhatsApp</div>
-            <div class="contact-item-value"><a href="tel:+923102090633">0310-2090633</a></div>
-          </div>
+          <div class="label">Phone / WhatsApp</div>
+          <a href="tel:+923102090633">0310-2090633</a>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-          <div>
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-value"><a href="mailto:tanveerkhan03102090633@gmail.com">tanveerkhan03102090633@gmail.com</a></div>
-          </div>
+          <div class="label">Email</div>
+          <a href="mailto:tanveerkhan03102090633@gmail.com">tanveerkhan03102090633@gmail.com</a>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-          <div>
-            <div class="contact-item-label">Workshop Location</div>
-            <div class="contact-item-value">Lahore, Pakistan</div>
-          </div>
+          <div class="label">Workshop Location</div>
+          <span>Sadar Bazar, Lahore, Pakistan</span>
         </div>
+        <div class="contact-item">
+          <div class="label">Working Hours</div>
+          <span>Daily 9:00 AM – 9:00 PM</span>
+        </div>
+        <a href="https://wa.me/923102090633" class="btn-whatsapp" target="_blank">Chat on WhatsApp</a>
       </div>
-      <a href="https://wa.me/923102090633" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
-    </div>
-    <div class="contact-form reveal">
-      <div class="form-title">Book a Service</div>
-      <div class="form-sub">Fill in the details and we'll get back to you shortly.</div>
-      <form id="serviceForm" action="https://formsubmit.co/tanveerkhan03102090633@gmail.com" method="POST" data-ajax-endpoint="https://formsubmit.co/ajax/tanveerkhan03102090633@gmail.com">
-        <input type="hidden" name="_subject" value="New Service Request – MashAllah Autos">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="e.g. Ali Hassan" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="03xx-xxxxxxx" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="car">Car Make & Model</label>
-          <input type="text" id="car" name="car_model" placeholder="e.g. Toyota Corolla 2019">
-        </div>
-        <div class="form-group">
-          <label for="service">Service Type</label>
-          <select id="service" name="service_type">
-            <option value="">Select a service</option>
+      <div>
+        <p style="font-size:0.85rem; font-weight:600; margin-bottom:1rem;">Book a Service</p>
+        <form class="contact-form" action="https://formsubmit.co/ajax/tanveerkhan03102090633@gmail.com" method="post">
+          <input type="hidden" name="_subject" value="New MashAllah Autos service booking" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="text" name="car" placeholder="Car Make &amp; Model" />
+          <select name="service" required>
+            <option value="" disabled selected>Select a service</option>
             <option>Engine Repair / Tuning</option>
             <option>AC Repair</option>
-            <option>Brakes & Suspension</option>
+            <option>Brakes &amp; Suspension</option>
             <option>Electrical Issue</option>
             <option>Oil / Fluid Change</option>
             <option>Doorstep Mechanic Visit</option>
             <option>On-the-Spot Roadside Repair</option>
-            <option>Denting & Painting</option>
+            <option>Denting &amp; Painting</option>
             <option>Tyres / Wheel Alignment</option>
             <option>Other</option>
           </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Describe the Problem</label>
-          <textarea id="message" name="message" placeholder="Tell us what's happening with your car — the more detail, the better."></textarea>
-        </div>
-        <button type="submit" class="form-submit">
-          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-          Send Message
-        </button>
-        <div class="form-note">We usually respond within 30 minutes during business hours.</div>
-        <div id="formStatus" class="form-status" aria-live="polite"></div>
-      </form>
+          <textarea name="message" placeholder="Describe the Problem"></textarea>
+          <button type="submit">Send Message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">This form sends service bookings directly to `tanveerkhan03102090633@gmail.com` via FormSubmit. The first submission may require email activation from FormSubmit.</p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MAP -->
-<div class="map-section">
-  <iframe
-    src="https://www.google.com/maps?q=31.546409394377605,74.37978535767083&z=16&output=embed"
-    allowfullscreen=""
-    loading="lazy"
-    title="MashAllah Autos Workshop Location">
-  </iframe>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-brand-name">MashAllah <span>Auto</span></div>
-      <div class="footer-brand-desc">Trusted car repair, doorstep mechanic, and on-the-spot roadside repair in Lahore. Run by Tanveer Khan with honesty and care at every step.</div>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">MashAllah Autos</div>
+        <p class="footer-desc">Trusted car mechanic in Sadar Bazar, Lahore. Engine repair, AC, brakes, doorstep mechanic and roadside repair. Run by Tanveer Khan with honesty and care.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Engine Repair &amp; Tuning</a></li>
+          <li><a href="#services">AC Repair</a></li>
+          <li><a href="#services">Brakes &amp; Suspension</a></li>
+          <li><a href="#services">Auto Electrical</a></li>
+          <li><a href="#mobile">Doorstep Mechanic</a></li>
+          <li><a href="#mobile">Roadside Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+923102090633">0310-2090633</a></li>
+          <li><a href="https://wa.me/923102090633" target="_blank">WhatsApp</a></li>
+          <li><a href="mailto:tanveerkhan03102090633@gmail.com">Email Us</a></li>
+          <li><a href="#contact">Send a Message</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-links">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Engine Repair & Tuning</a></li>
-        <li><a href="#services">AC Repair</a></li>
-        <li><a href="#services">Brakes & Suspension</a></li>
-        <li><a href="#services">Auto Electrical</a></li>
-        <li><a href="#mobile">Doorstep Mechanic</a></li>
-        <li><a href="#mobile">On-the-Spot Roadside Repair</a></li>
-      </ul>
+    <div class="footer-bottom">
+      © 2025 MashAllah Autos. Proprietor: Tanveer Khan. Sadar Bazar, Lahore, Pakistan.
     </div>
-    <div class="footer-links">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:+923102090633">0310-2090633</a></li>
-        <li><a href="https://wa.me/923102090633" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-        <li><a href="mailto:tanveerkhan03102090633@gmail.com">tanveerkhan03102090633@gmail.com</a></li>
-        <li><a href="#contact">Send a Message</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2025 <span>MashAllah Autos</span>. Proprietor: Tanveer Khan. Lahore, Pakistan.</div>
-    <div class="footer-call"><a href="tel:+923102090633">Call: 0310-2090633</a></div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.getElementById('hamburger');
-  const revealItems = document.querySelectorAll('.reveal');
-  const serviceForm = document.getElementById('serviceForm');
-  const formStatus = document.getElementById('formStatus');
+  <a href="tel:+923102090633" class="sticky-call">📞 Call Now: 0310-2090633</a>
 
-  if (navLinks) {
-    document.querySelectorAll('#navLinks a').forEach((link) => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+  <script>
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const bookingForm = document.querySelector('.contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitButton = bookingForm ? bookingForm.querySelector('button[type="submit"]') : null;
+
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      drawer.classList.toggle('open');
     });
-  }
 
-  if (hamburger && navLinks) {
-    hamburger.setAttribute('role', 'button');
-    hamburger.setAttribute('tabindex', '0');
-    hamburger.setAttribute('aria-label', 'Toggle navigation menu');
-
-    hamburger.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        navLinks.classList.toggle('open');
-      }
-    });
-  }
-
-  if ('IntersectionObserver' in window) {
-    revealItems.forEach((item) => item.classList.add('hidden'));
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          entry.target.classList.remove('hidden');
-          observer.unobserve(entry.target);
-        }
+    // Close drawer when any link inside it is clicked
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        drawer.classList.remove('open');
       });
-    }, { threshold: 0.15 });
+    });
 
-    revealItems.forEach((item) => observer.observe(item));
-  }
+    if (bookingForm && formStatus && submitButton) {
+      bookingForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-  if (serviceForm && formStatus) {
-    serviceForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const submitButton = serviceForm.querySelector('.form-submit');
-      const originalButtonText = submitButton ? submitButton.innerHTML : '';
-
-      formStatus.className = 'form-status';
-      formStatus.textContent = '';
-
-      if (submitButton) {
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
-      }
 
-      try {
-        const response = await fetch(serviceForm.dataset.ajaxEndpoint || serviceForm.action, {
-          method: 'POST',
-          body: new FormData(serviceForm),
-          headers: {
-            Accept: 'application/json'
+        try {
+          const response = await fetch(bookingForm.action, {
+            method: 'POST',
+            body: new FormData(bookingForm),
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error('Request failed');
           }
-        });
 
-        if (!response.ok) {
-          throw new Error('Submission failed');
-        }
-
-        formStatus.classList.add('success');
-        formStatus.textContent = 'Your message was submitted successfully. We will get back to you shortly.';
-        serviceForm.reset();
-      } catch (error) {
-        formStatus.classList.add('error');
-        formStatus.textContent = 'Your message could not be sent right now. Please try again or contact us on WhatsApp.';
-      } finally {
-        if (submitButton) {
+          formStatus.className = 'form-statu  s is-visible is-success';
+          formStatus.textContent = 'Your service request has been sent successfully. We will get back to you soon.';
+          bookingForm.reset();
+        } catch (error) {
+          formStatus.className = 'form-status is-visible is-error';
+          formStatus.textContent = 'We could not send your request right now. Please try again in a moment or contact us on WhatsApp.';
+        } finally {
           submitButton.disabled = false;
-          submitButton.innerHTML = originalButtonText;
+          submitButton.textContent = 'Send Message';
         }
-      }
-    });
-  }
-</script>
+      });
+    }
+  </script>
+
 </body>
 </html>
